@@ -29,7 +29,14 @@ else if(num3 >= num2 & num2 >= num1){alert(`average num2`)}
           else if(num2 >= num3 & num3 >= num1){alert(`average num3`)}
                else if(num3 > num1 & num1 > num2){alert(`average num1`)}
                     else if(num2 > num1 & num1 > num3){alert(`average num1`)}
-                         else{alert('щось пішло не так????')};
+                         else alert('щось пішло не так????');
+// або:
+if((num1 >= num2 & num2 >= num3)||(num3 >= num2 & num2 >= num1)){alert(`average num2`)}
+else if((num1 >= num3 & num3 >= num2)||(num2 >= num3 & num3 >= num1)){alert(`average num3`)}
+else if((num3 > num1 & num1 > num2)||(num2 > num1 & num1 > num3)){alert(`average num1`)}
+else alert('щось пішло не так????');
+// або:
+
 
 // - Перепишіть конструкцію if з використанням умовного оператора '?':
 // let result;
@@ -46,7 +53,8 @@ let result = a + b < 4 ? console.log ('Мало') : console.log ('Багато')
 // напишіть це тернарним оператором
 const numberYour = + prompt('введить число');
 if(typeof numberYour === "number" & numberYour < 100 & numberYour > - 100){
-
+  if (numberYour > 0){console.log('Ваше число позитивне!')}
+     else  if (numberYour < 0){console.log('Ваше число негативне!')}
 }
     // {switch (numberYour) {
     //     case numberYour:
