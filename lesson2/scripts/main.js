@@ -132,7 +132,7 @@ else {
 
 // - Скласти розклад на тиждень за домопоги switch. Користувач вводить порядковий номер дня тижня і на екрані відображається інфа
 // що заплановано на цей день (можна замість плану на день, назву дня англійською).
-var dayOfTheWeek = prompt('enter the serial number of the day of the week');
+let dayOfTheWeek = prompt('enter the serial number of the day of the week');
 switch (dayOfTheWeek) {
     case '1':
         console.log('цьомкнути Оксану');
