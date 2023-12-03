@@ -1,11 +1,26 @@
 // - Знайти та вивести довижину настипних стрінгових значень
 // 'hello world', 'lorem ipsum', 'javascript is cool'
+let str01 = 'hello world';
+let str02 = 'lorem ipsum';
+let str03 = 'javascript is cool';
+console.log(str01.length);
+console.log(str02.length);
+console.log(str03.length);
+
 // - Перевести до великого регістру наступні стрінгові значення
 // 'hello world', 'lorem ipsum', 'javascript is cool'
+console.log(str01.toUpperCase());
+console.log(str02.toUpperCase());
+console.log(str03.toUpperCase());
+
 // - Перевести до нижнього регістру настипні стрінгові значення
 // 'HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'
-// - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
+console.log(str01.toLowerCase());
+console.log(str02.toLowerCase());
+console.log(str03.toLowerCase());
 
+// - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
+let str = ' dirty string   '
 
 // - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
 //     let str = 'Ревуть воли як ясла повні';

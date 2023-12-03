@@ -196,4 +196,16 @@ let currencyBankSens =  [
     {currency:'PLN',value:9.25},
     {currency:'TRY',value:1.46},
 ];
-exchange(1460000, 'TRY', currencyBankSens)
+exchange(1460000, 'TRY', currencyBankSens);
+
+
+console.log('курс валют в банке "Sens":')
+for (const currencyValue of currencyBankSens) {
+    for (const currencyBankSensKey in currencyValue) {
+        console.log(currencyBankSensKey, ':', currencyValue[currencyBankSensKey]);
+    }
+    console.log('')
+}
+
+currencyBankSens.push({currency:'CHF', value: 42.45});
+console.log(currencyBankSens);
