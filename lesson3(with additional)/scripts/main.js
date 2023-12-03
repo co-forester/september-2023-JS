@@ -69,7 +69,7 @@ let products = [
         title: 'tea',
         price: 15,
         image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
-    },
+    }
 ];
 
 // ШАБЛОН
@@ -104,17 +104,17 @@ let users = [
 //     - користувачів зі статусом true
 for (const user of users) {
     if(user.status){console.log(user)}
-};
+}
 console.log('---------------------');
 // - користувачів зі статусом false
 for (const user of users) {
     if(!user.status){console.log(user)}
-};
+}
 console.log('---------------------');
 // - користувачів які старші за 30 років
 for (const user of users) {
     if(user.age > 30){console.log(user)}
-};
+}
 console.log('---------------------');
 // --створити масив з:
 //     - з 5 числових значень
@@ -131,8 +131,8 @@ console.log('---------------------');
 // -- Створити пустий масив. Наповнити його будь-якими значеннями звертаючись до конкретного індексу. Вивести в консоль
 let persons =[];
 for (let j = 0; j < 5; j++) {
-    persons += `${prompt('add number', '666')} , `;
-};
+    persons += `${prompt('add number', '666')},`
+}
 console.log(persons);
 console.log('---------------------');
 
@@ -144,22 +144,22 @@ let a = [2,17,13,6,22,31,45,66,100,-18];
 // 1. перебрати його циклом while
 let j = 0;
 while (j < a.length){
-    console.log(a[j])
+    console.log(a[j]);
     j ++;
-};
+}
 console.log('---------------------');
 //     2. перебрати його циклом for
 for (let k = 0; k < a.length; k ++) {
     const aElement = a[k];
     console.log(aElement)
-};
+}
 console.log('---------------------');
 //     3. перебрати циклом while та вивести  числа тільки з непарним індексом
 let l = 0;
 while (l < a.length){
     if (l%2 !== 0){console.log(a[l])}
     l ++;
-};
+}
 console.log('---------------------');
 // 4. перебрати циклом for та вивести  числа тільки з непарним індексом
 for (let k = 0; k < a.length; k ++) {
@@ -223,8 +223,8 @@ console.log('---------------------');
 // 5. перебрати циклом while та вивести  числа тільки парні  значення (в зворотньому циклі (с заду на перед))
 let s = a.length-1;
 while (s >= 0){
-    if (s%2 === 0){console.log(a[s])}
-    s --;
+    if (s%2 === 0){console.log(a[s])};
+    s --
 };
 console.log('---------------------');
 // 6. перебрати циклом for та вивести  числа тільки парні  значення (в зворотньому циклі (с заду на перед))
@@ -326,39 +326,44 @@ let books = [
         page: 168,
         genre: ['учбова'],
         authors:["Свірідова", "Ерогін", "Жорхіч"]
-    },{
+    },
+    {
         title: 'хімія на кухне',
         page: 169,
         genre: ['прікладна, драма'],
         authors:["Заноха", "Любчик"]
-    },{
+    },
+    {
         title: 'Женщіна і автомобіль',
         page: 5,
         genre: ['фантастіка, драма'],
         authors:["Слесарьов", "Чоловік", "Зять", "Батя", "Сусід"]
-    },{
+    },
+    {
         title: 'геометрія',
         page: 198,
         genre: ['учбова'],
         authors:["Дронов", "Цимбал", "Хрюндєль"]
-    },{
+    },
+    {
         title: 'фізика',
         page: 207,
         genre: ['учбова'],
         authors:["Стакан", "Ловкій", "Шустряк", "Кокос"]
-    },{
+    },
+    {
         title: 'казки',
         page: 376,
         genre: ['казки, фентазі'],
         authors:["Тимошенко", "Порошенко"]
-    },
-]
+    }
+];
 // -знайти наібльшу книжку.
 let p = 0;
 let bookBig = [];
 for (const book of books) {
-    if (book.page > p){p = book.page, bookBig = book}
-};
+    if (book.page > p){bookBig = bookBig + book}
+}
 console.log(bookBig);
 console.log('---------------------');
 // - знайти книжку/ки з найбільшою кількістю жанрів
@@ -366,7 +371,7 @@ let v = 0;
 let bookMoreGenre = [];
 for (const book of books) {
     if (book.genre.length > v){v = book.genre.length, bookMoreGenre = bookMoreGenre + book}
-};
+}
 console.log(bookMoreGenre);
 console.log('---------------------');
 // - знайти книжку/ки з найдовшою назвою
@@ -377,7 +382,7 @@ for (const book of books) {
     if (book.authors.length === 1){
         bookDblAuthors = bookDblAuthors + book
     }
-};
+}
 console.log(bookDblAuthors);
 console.log('---------------------');
 // - знайти книжку/ки які писав 1 автор
@@ -386,6 +391,8 @@ console.log('---------------------');
 
 // 1. Створити пустий масив та :
 //     a. заповнити його 50 парними числами за допомоги циклу.
+let w = [];
+
 //     b. заповнити його 50 непарними числами за допомоги циклу.
 //     c. Заповнити масив 20ма рандомними числами. (Google: Generate random number JS)
 // d. Заповнити масив 20ма рандомними чисалами в діапазоні від 8 до 732 (Google: Generate random number JS)
