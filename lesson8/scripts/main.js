@@ -112,11 +112,11 @@ class CarNN {
         this.engine = engine;
     }
     drive(){
-        return `Їдемо зі швидкістю ${this.speedMax} на годину`;
+        return console.log(`Їдемо зі швидкістю ${this.speedMax} на годину`);
     };//  - виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
     info() {
-        return `model: ${this.model}, producer: ${this.producer}, 
-        speedMax: ${this.speedMax}, year: ${this.year}, engine: ${this.engine}`
+        return console.log(`model: ${this.model}, producer: ${this.producer}, 
+        speedMax: ${this.speedMax}, year: ${this.year}, engine: ${this.engine}`)
     };// - виводить всю інформацію про автомобіль в форматі `назва поля - значення поля`
     increaseMaxSpeed(newSpeed){
         return this.speedMax =  this.speedMax + newSpeed
@@ -135,13 +135,13 @@ let driver2 = {
     surname: 'Kolesnyk'
 }
 let carNN = new CarNN('Passat', 'Volkswagen', 265,2020, 2.0);
-console.log(carNN);
+// console.log(carNN);
 carNN.increaseMaxSpeed(100);
 carNN.changeYear(2024);
 carNN.addDriver(driver2);
-console.log(carNN.info());
-console.log(carNN.drive());
-
+carNN.info();
+carNN.drive();
+console.log('************************')
 
 // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
 class Cinderella {
