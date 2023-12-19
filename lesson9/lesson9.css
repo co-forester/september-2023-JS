@@ -1,0 +1,79 @@
+body{
+    background: rgb(56, 54, 54);
+    margin: 0
+}
+.alpha{
+    font-size: 33px;
+    padding: 0 0 0 37px;
+}
+.beta{
+
+}
+.collapse{
+
+}
+.wrap{
+
+}
+.coursMonth, .item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #e5cdaf;
+    border: darkgreen;
+    border-radius: 6px;
+    margin: 0 0 3px 13px;
+    padding: 3px;
+}
+.member{
+    background: #d3f5a2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3px;
+    padding: 30px;
+}
+.member h1{
+    color: red;
+}
+.courses{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    background-image: url("/img/okten.jpg");
+    background-size: cover;
+    margin-top: 15px;
+    border: solid 4px #22930a;
+}
+.courses1{
+    display: flex;
+}
+.courses2{
+    /*display: flex;*/
+    /*margin: 10px 50px 0 50px;*/
+    /*background: white;*/
+    color: lightblue;
+    /*border: solid 4px blue;*/
+}
+.title, .monthDuration, .hourDuration{
+    display: flex;
+    padding: 3px 0 10px;
+    color: white;
+    /*background-image: url("");*/
+    text-align: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: solid 3px #529f0a;
+    margin: 1px 1px 1px 1px;
+}
+.monthDuration{
+    width: 25vw;
+}
+.hourDuration {
+    width: 75vw;
+}
+
+
+
+
+
