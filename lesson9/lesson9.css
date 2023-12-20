@@ -15,6 +15,9 @@ body{
 .wrap{
 
 }
+.ul{
+    color: whitesmoke;
+}
 .coursMonth, .item{
     display: flex;
     flex-direction: column;

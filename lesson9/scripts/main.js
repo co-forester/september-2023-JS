@@ -18,6 +18,7 @@ document.body.append(div1Clon);
 const menu =  ['Main','Products','About us','Contacts'];
 // Зробити ul в середині якої будуть лежати елементи масиву (кожен в своєму li)
 let ul = document.createElement('ul');
+ul.classList.add('ul');
 document.body.appendChild(ul);
 for (const item of menu) {
     const li = document.createElement('li');
