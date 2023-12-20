@@ -16,7 +16,7 @@ let div1Clon = div1.cloneNode(true);
 document.body.append(div1Clon);
 // - Є масив:
 const menu =  ['Main','Products','About us','Contacts'];
-// Зробити ul в середині якої будуть лежати елементи масиву (кожен в своєму li)
+// Зробити ul в середині якої будуть лежати елементи масиву (кожен у своєму li)
 let ul = document.createElement('ul');
 ul.classList.add('ul');
 document.body.appendChild(ul);
@@ -75,7 +75,7 @@ for (const item of cD) {
 // ==========================
 
 // - є масив simpsons, котрий лежить в arrays.js (на цей момент ви вже знаєте де він знаходиться)
-// Проітерувати його, створиши для кожного об'єкту  масиву <div class='member'> та наповнити його данними з об'єкту.
+// Проітерувати його, створиши для кожного об'єкту масиву <div class='member'> та наповнити його даними з об'єкту.
 //     Якщо людською мовою: під кожного члена родини зробити блок та наповнити його інформацією з цього об'єкту
 let simpsons = [
     {
@@ -90,7 +90,7 @@ let simpsons = [
         surname: 'Simpson',
         age: 40,
         info: 'Гомер Джей Сімпсон (англ. Homer Jay Simpson) — один із головних героїв мультсеріалу «Сімпсони». Гомер — грубий і неввічливий батько родини, він має очевидні вади: товстий, лисий і не дуже розумний. Нерідко він поводиться як блазень, абсурдно, егоїстично і нетактовно, але все ж лишається симпатичним.',
-        photo: 'http://upload.wikimedia.org/wikipedia/en/0/02/Homer_Simpson_2006.png'
+        photo: 'https://upload.wikimedia.org/wikipedia/en/0/02/Homer_Simpson_2006.png'
     },
     {
         name: 'Marge',

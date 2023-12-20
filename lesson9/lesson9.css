@@ -29,7 +29,7 @@ body{
     padding: 3px;
 }
 .member{
-    background: #d3f5a2;
+    background: #e7db8d;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,6 +38,9 @@ body{
 }
 .member h1{
     color: red;
+}
+.member p{
+    color: #131348;
 }
 .courses{
     width: 400px;
