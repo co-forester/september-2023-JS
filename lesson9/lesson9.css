@@ -15,7 +15,10 @@ body{
 .wrap{
 
 }
-.ul{
+#clon{
+    font-size: 46px;
+}
+#ul{
     color: whitesmoke;
 }
 .coursMonth, .item{
@@ -30,8 +33,9 @@ body{
 }
 .member{
     background: #e7db8d;
+    width: 300px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     margin-bottom: 3px;
     padding: 30px;
@@ -43,7 +47,7 @@ body{
     color: #131348;
 }
 .courses{
-    width: 400px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     background-image: url("/img/okten.jpg");

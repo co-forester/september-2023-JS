@@ -12,13 +12,16 @@ div1.style.color = '#F50505F9';
 // - додати цей блок в body.
 document.body.append(div1);
 // - клонувати його повністю, та додати клон в body.
-let div1Clon = div1.cloneNode(true);
-document.body.append(div1Clon);
+let div1Clon1 = div1.cloneNode(true);
+let div1Clon2 = div1.cloneNode();
+div1Clon2.setAttribute('id', 'clon');
+div1Clon2.innerText = 'super';
+document.body.append(div1Clon2, div1Clon1);
 // - Є масив:
 const menu =  ['Main','Products','About us','Contacts'];
 // Зробити ul в середині якої будуть лежати елементи масиву (кожен у своєму li)
 let ul = document.createElement('ul');
-ul.classList.add('ul');
+ul.setAttribute('id','ul');
 document.body.appendChild(ul);
 for (const item of menu) {
     const li = document.createElement('li');
@@ -234,10 +237,15 @@ for (const cours  of coursesArray) {
     let courses2 = document.createElement('div');
     courses2.classList.add('courses2');
 
-
-    let modules = cours.modules
+    courses.append(title);
+    document.body.appendChild(courses);
+    courses1.appendChild(monthDuration);
+    courses1.appendChild(hourDuration);
+    courses.append(courses1);
+    let modules = cours.modules;
+    let ul = document.createElement('ul');
     for (const modul of modules) {
-        let ul = document.createElement('ul');
+
         courses2.appendChild(ul);
         ul.classList.add('ul');
         let li = document.createElement('li');
@@ -245,10 +253,6 @@ for (const cours  of coursesArray) {
         courses.append(courses2);
         ul.appendChild(li);
     }
-    courses1.appendChild(monthDuration);
-    courses1.appendChild(hourDuration);
-    courses.append(title);
-    courses.append(courses1);
-    document.body.appendChild(courses)
+
 }
 // ------------------
