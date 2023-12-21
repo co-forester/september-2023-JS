@@ -109,22 +109,32 @@ f2.addEventListener('submit', function (e) {
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка,
 //     з відповідним вмістом.
 // (Додаткова частина для завдання)
-function createTable(element, columns, rows) {
-    let tablet = document.createElement('table');
-    // let element = document.getElementById()
-    for (let i = 0; i < rows; i++) {
-        let tr = document.createElement('tr');
-        tr.classList.add('tr');
-        for (let j = 0; j < columns; j++) {
-            let td = document.createElement('td');
-            td.classList.add('td')
-            tr.appendChild(td);
+let but5 = document.getElementById('but5');
+but5.onclick = createTable;
+function createTable() {
+    form.onsubmit = function (ev) {
+        // console.log(ev);
+        ev.preventDefault();
+        let element = this.element.value;
+        let columns = this.columns.value;
+        let rows = this.rows.value
+        let tablet = document.createElement('table');
 
+        for (let i = 0; i < rows; i++) {
+            let tr = document.createElement('tr');
+            tr.classList.add('tr');
+            for (let j = 0; j < columns; j++) {
+                let td = document.createElement('td');
+                td.classList.add('td')
+                tr.appendChild(td);
+                td.innerText = `${element}`
+            }
+            tablet.appendChild(tr);
         }
-        tablet.appendChild(tr);
+        document.body.appendChild(tablet);
     }
-    document.body.appendChild(tablet);
 }
+
 
 // 8. - *** (подібне було вище, але...будьте уважні в другій частині) створити сторінку з
 // довільним блоком, в середині якого є значення "100 грн"
