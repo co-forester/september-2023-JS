@@ -387,31 +387,36 @@ f2.addEventListener('submit', function (e) {
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка,
 //     з відповідним вмістом.
 // (Додаткова частина для завдання)
+let form5 = document.forms[2];
 let but5 = document.getElementById('but5');
-// but5.onclick = createTable;
-f5.addEventListener('submit', function (ev)
-     {
-        // console.log(ev);
-        ev.preventDefault();
-        let element = this.element.value;
-        let columns = this.columns.value;
-        let rows = this.rows.value;
-        let tablet = document.createElement('tablet');
-        tablet. classList.add('tablet');
-                for (let i = 0; i < rows; i++) {
-                    let tr = document.createElement('div');
-                    tr.classList.add('tr');
-                    tablet.appendChild(tr);
-                    for (let j = 0; j < columns; j++) {
-                        let td = document.createElement('div');
-                        td.classList.add('td')
-                        tr.appendChild(td);
-                        td.innerText = `${element}`
-                    }
+but5.disabled = 'true';
+form5.element.onclick = function (ev) {
+    ev.preventDefault();
+    but5.disabled = !but5.disabled
+}
+f5.addEventListener('submit', function (ev){
+    ev.preventDefault();
 
-                }
-                document.body.appendChild(tablet);
+    let element = this.element.value;
+    let columns = this.columns.value;
+    let rows = this.rows.value;
+    let tablet = document.createElement('tablet');
+    tablet. classList.add('tablet');
+    for (let i = 0; i < rows; i++) {
+        let tr = document.createElement('div');
+        tr.classList.add('tr');
+        tablet.appendChild(tr);
+        for (let j = 0; j < columns; j++) {
+            let td = document.createElement('div');
+            td.classList.add('td')
+            tr.appendChild(td);
+            td.innerText = `${element}`
+        }
+
     }
+    document.body.appendChild(tablet);
+    but5.disabled = !but5.disabled
+}
 );
 
 
