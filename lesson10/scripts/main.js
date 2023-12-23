@@ -345,9 +345,10 @@ let foo666  = function(arr){
     }
     console.log(numberPage)
 }
-prev.onclick = function (){
-    alert(`!!!!!`)
-}
+// prev.onclick = function (){
+//     alert(`!!!!!`);
+//     location.reload()
+// }
 
 
 
