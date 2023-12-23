@@ -6,6 +6,12 @@ console.log(document.forms);
 let form = document.forms[0];
 // console.log(form);
 let users = [];
+let f1But = document.querySelector('#f1But');
+f1But.disabled = true;
+form.userName.onclick = function (ev) {
+    ev.preventDefault();
+    f1But.disabled = !f1But.disabled
+}
 form.onsubmit = function (ev) {
     // console.log(ev);
     ev.preventDefault();
@@ -17,6 +23,8 @@ form.onsubmit = function (ev) {
     divUser.innerText = `user: surname - ${userSurname}, name - ${userName}, age - ${userAge}`;
     users.push({userName, userSurname, userAge});
     document.body.appendChild(divUser);
+    form.reset();
+    f1But.disabled = !f1But.disabled
 };
 // let btnShow = document.getElementById('btn-show-all');
 // btnShow.addEventListener('click', function (e) {
@@ -69,6 +77,275 @@ window.onunload = function (){
 // при завантаженні сторінки з'являються перші 10 об'єктів.
 //     При натисканні next виводяться наступні 10 об'єктів
 // При натисканні prev виводяться попередні 10 об'єктів
+class Client {
+    constructor(id, name, surname , email, phone, order) {
+        this.id = id;
+        this.name = name;
+        this.surname =surname;
+        this.email = email;
+        this.phone = phone;
+        this.order = order
+    }
+}
+let clients = [
+    new Client(100, 'Vivien', 'Hilton', 'druyten89frtj76@gmail.com', 380636354737,
+        ['shirt', 'skirt', 'coat', 'cap']),
+    new Client(99, 'Valya', 'Rubbiny', 'hts56@gmail.com', 380684544737,
+        ['boll', 'skirt', 'coat', 'cap', 'cup']),
+    new Client(98, 'Zinaida', 'Pilotca', 'plotcina23hy@gmail.com', 380664541287,
+        ['shirt', 'skirt', 'coat']),
+    new Client(97, 'Zhanna', 'Navhotta', 'ftf5ffg@gmail.com', 380634772587,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk']),
+    new Client(96, 'Vasya', 'Fistonov', 'fistin45hj@gmail.com', 38068887287,
+        ['shirt', 'skirt', 'cap', 'cup', 'milk']),
+    new Client(95, 'Ludmila', 'Giltova', 'ddbbggiillg@gmail.com', 380677770287,
+        ['shirt', 'skirt', 'cup', 'milk']),
+    new Client(94, 'Fedor', 'Navoyta', 'fednav4499aya@gmail.com', 380664772466,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk']),
+    new Client(93, 'Oksana', 'Kolesnyk', 'oksi474kol@gmail.com', 380639819998,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(92, 'Jan', 'Kolesnyk', 'jann67kol@gmail.com', 380638919998,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(91, 'Jan', 'Kolesnyk', 'jann67kol@gmail.com', 380638919998,
+        ['coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(1156, 'Vivien', 'Hilton', 'druyten89frtj76@gmail.com', 380636354737,
+        ['shirt', 'skirt', 'coat', 'cap']),
+    new Client(90, 'Valya', 'Rubbiny', 'hts56@gmail.com', 380684544737,
+        ['boll', 'skirt', 'coat', 'cap', 'cup']),
+    new Client(89, 'Zinaida', 'Pilotca', 'plotcina23hy@gmail.com', 380664541287,
+        ['shirt', 'skirt', 'coat']),
+    new Client(88, 'Zhanna', 'Navhotta', 'ftf5ffg@gmail.com', 380634772587,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk']),
+    new Client(87, 'Vasya', 'Fistonov', 'fistin45hj@gmail.com', 38068887287,
+        ['shirt', 'skirt', 'cap', 'cup', 'milk']),
+    new Client(86, 'Ludmila', 'Giltova', 'ddbbggiillg@gmail.com', 380677770287,
+        ['shirt', 'skirt', 'cup', 'milk']),
+    new Client(85, 'Fedor', 'Navoyta', 'fednav4499aya@gmail.com', 380664772466,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk']),
+    new Client(84, 'Oksana', 'Kolesnyk', 'oksi474kol@gmail.com', 380639819998,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(83, 'Jan', 'Kolesnyk', 'jann67kol@gmail.com', 380638919998,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(82, 'Jan', 'Kolesnyk', 'jann67kol@gmail.com', 380638919998,
+        ['coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(1156, 'Vivien', 'Hilton', 'druyten89frtj76@gmail.com', 380636354737,
+        ['shirt', 'skirt', 'coat', 'cap']),
+    new Client(81, 'Valya', 'Rubbiny', 'hts56@gmail.com', 380684544737,
+        ['boll', 'skirt', 'coat', 'cap', 'cup']),
+    new Client(80, 'Zinaida', 'Pilotca', 'plotcina23hy@gmail.com', 380664541287,
+        ['shirt', 'skirt', 'coat']),
+    new Client(79, 'Zhanna', 'Navhotta', 'ftf5ffg@gmail.com', 380634772587,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk']),
+    new Client(78, 'Vasya', 'Fistonov', 'fistin45hj@gmail.com', 38068887287,
+        ['shirt', 'skirt', 'cap', 'cup', 'milk']),
+    new Client(77, 'Ludmila', 'Giltova', 'ddbbggiillg@gmail.com', 380677770287,
+        ['shirt', 'skirt', 'cup', 'milk']),
+    new Client(76, 'Fedor', 'Navoyta', 'fednav4499aya@gmail.com', 380664772466,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk']),
+    new Client(75, 'Oksana', 'Kolesnyk', 'oksi474kol@gmail.com', 380639819998,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(74, 'Jan', 'Kolesnyk', 'jann67kol@gmail.com', 380638919998,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(73, 'Jan', 'Kolesnyk', 'jann67kol@gmail.com', 380638919998,
+        ['coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(1156, 'Vivien', 'Hilton', 'druyten89frtj76@gmail.com', 380636354737,
+        ['shirt', 'skirt', 'coat', 'cap']),
+    new Client(72, 'Valya', 'Rubbiny', 'hts56@gmail.com', 380684544737,
+        ['boll', 'skirt', 'coat', 'cap', 'cup']),
+    new Client(71, 'Zinaida', 'Pilotca', 'plotcina23hy@gmail.com', 380664541287,
+        ['shirt', 'skirt', 'coat']),
+    new Client(70, 'Zhanna', 'Navhotta', 'ftf5ffg@gmail.com', 380634772587,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk']),
+    new Client(69, 'Vasya', 'Fistonov', 'fistin45hj@gmail.com', 38068887287,
+        ['shirt', 'skirt', 'cap', 'cup', 'milk']),
+    new Client(68, 'Ludmila', 'Giltova', 'ddbbggiillg@gmail.com', 380677770287,
+        ['shirt', 'skirt', 'cup', 'milk']),
+    new Client(67, 'Fedor', 'Navoyta', 'fednav4499aya@gmail.com', 380664772466,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk']),
+    new Client(66, 'Oksana', 'Kolesnyk', 'oksi474kol@gmail.com', 380639819998,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(65, 'Jan', 'Kolesnyk', 'jann67kol@gmail.com', 380638919998,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(64, 'Jan', 'Kolesnyk', 'jann67kol@gmail.com', 380638919998,
+        ['coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(1156, 'Vivien', 'Hilton', 'druyten89frtj76@gmail.com', 380636354737,
+        ['shirt', 'skirt', 'coat', 'cap']),
+    new Client(63, 'Valya', 'Rubbiny', 'hts56@gmail.com', 380684544737,
+        ['boll', 'skirt', 'coat', 'cap', 'cup']),
+    new Client(62, 'Zinaida', 'Pilotca', 'plotcina23hy@gmail.com', 380664541287,
+        ['shirt', 'skirt', 'coat']),
+    new Client(61, 'Zhanna', 'Navhotta', 'ftf5ffg@gmail.com', 380634772587,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk']),
+    new Client(60, 'Vasya', 'Fistonov', 'fistin45hj@gmail.com', 38068887287,
+        ['shirt', 'skirt', 'cap', 'cup', 'milk']),
+    new Client(59, 'Ludmila', 'Giltova', 'ddbbggiillg@gmail.com', 380677770287,
+        ['shirt', 'skirt', 'cup', 'milk']),
+    new Client(58, 'Fedor', 'Navoyta', 'fednav4499aya@gmail.com', 380664772466,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk']),
+    new Client(57, 'Oksana', 'Kolesnyk', 'oksi474kol@gmail.com', 380639819998,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(56, 'Jan', 'Kolesnyk', 'jann67kol@gmail.com', 380638919998,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(55, 'Jan', 'Kolesnyk', 'jann67kol@gmail.com', 380638919998,
+        ['coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(1156, 'Vivien', 'Hilton', 'druyten89frtj76@gmail.com', 380636354737,
+        ['shirt', 'skirt', 'coat', 'cap']),
+    new Client(54, 'Valya', 'Rubbiny', 'hts56@gmail.com', 380684544737,
+        ['boll', 'skirt', 'coat', 'cap', 'cup']),
+    new Client(53, 'Zinaida', 'Pilotca', 'plotcina23hy@gmail.com', 380664541287,
+        ['shirt', 'skirt', 'coat']),
+    new Client(52, 'Zhanna', 'Navhotta', 'ftf5ffg@gmail.com', 380634772587,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk']),
+    new Client(51, 'Vasya', 'Fistonov', 'fistin45hj@gmail.com', 38068887287,
+        ['shirt', 'skirt', 'cap', 'cup', 'milk']),
+    new Client(50, 'Ludmila', 'Giltova', 'ddbbggiillg@gmail.com', 380677770287,
+        ['shirt', 'skirt', 'cup', 'milk']),
+    new Client(49, 'Fedor', 'Navoyta', 'fednav4499aya@gmail.com', 380664772466,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk']),
+    new Client(48, 'Oksana', 'Kolesnyk', 'oksi474kol@gmail.com', 380639819998,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(47, 'Jan', 'Kolesnyk', 'jann67kol@gmail.com', 380638919998,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(46, 'Jan', 'Kolesnyk', 'jann67kol@gmail.com', 380638919998,
+        ['coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(1156, 'Vivien', 'Hilton', 'druyten89frtj76@gmail.com', 380636354737,
+        ['shirt', 'skirt', 'coat', 'cap']),
+    new Client(45, 'Valya', 'Rubbiny', 'hts56@gmail.com', 380684544737,
+        ['boll', 'skirt', 'coat', 'cap', 'cup']),
+    new Client(44, 'Zinaida', 'Pilotca', 'plotcina23hy@gmail.com', 380664541287,
+        ['shirt', 'skirt', 'coat']),
+    new Client(43, 'Zhanna', 'Navhotta', 'ftf5ffg@gmail.com', 380634772587,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk']),
+    new Client(42, 'Vasya', 'Fistonov', 'fistin45hj@gmail.com', 38068887287,
+        ['shirt', 'skirt', 'cap', 'cup', 'milk']),
+    new Client(41, 'Ludmila', 'Giltova', 'ddbbggiillg@gmail.com', 380677770287,
+        ['shirt', 'skirt', 'cup', 'milk']),
+    new Client(40, 'Fedor', 'Navoyta', 'fednav4499aya@gmail.com', 380664772466,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk']),
+    new Client(39, 'Oksana', 'Kolesnyk', 'oksi474kol@gmail.com', 380639819998,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(38, 'Jan', 'Kolesnyk', 'jann67kol@gmail.com', 380638919998,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(37, 'Jan', 'Kolesnyk', 'jann67kol@gmail.com', 380638919998,
+        ['coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(1156, 'Vivien', 'Hilton', 'druyten89frtj76@gmail.com', 380636354737,
+        ['shirt', 'skirt', 'coat', 'cap']),
+    new Client(36, 'Valya', 'Rubbiny', 'hts56@gmail.com', 380684544737,
+        ['boll', 'skirt', 'coat', 'cap', 'cup']),
+    new Client(35, 'Zinaida', 'Pilotca', 'plotcina23hy@gmail.com', 380664541287,
+        ['shirt', 'skirt', 'coat']),
+    new Client(34, 'Zhanna', 'Navhotta', 'ftf5ffg@gmail.com', 380634772587,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk']),
+    new Client(33, 'Vasya', 'Fistonov', 'fistin45hj@gmail.com', 38068887287,
+        ['shirt', 'skirt', 'cap', 'cup', 'milk']),
+    new Client(32, 'Ludmila', 'Giltova', 'ddbbggiillg@gmail.com', 380677770287,
+        ['shirt', 'skirt', 'cup', 'milk']),
+    new Client(31, 'Fedor', 'Navoyta', 'fednav4499aya@gmail.com', 380664772466,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk']),
+    new Client(30, 'Oksana', 'Kolesnyk', 'oksi474kol@gmail.com', 380639819998,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(29, 'Jan', 'Kolesnyk', 'jann67kol@gmail.com', 380638919998,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(28, 'Jan', 'Kolesnyk', 'jann67kol@gmail.com', 380638919998,
+        ['coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(1156, 'Vivien', 'Hilton', 'druyten89frtj76@gmail.com', 380636354737,
+        ['shirt', 'skirt', 'coat', 'cap']),
+    new Client(27, 'Valya', 'Rubbiny', 'hts56@gmail.com', 380684544737,
+        ['boll', 'skirt', 'coat', 'cap', 'cup']),
+    new Client(26, 'Zinaida', 'Pilotca', 'plotcina23hy@gmail.com', 380664541287,
+        ['shirt', 'skirt', 'coat']),
+    new Client(25, 'Zhanna', 'Navhotta', 'ftf5ffg@gmail.com', 380634772587,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk']),
+    new Client(24, 'Vasya', 'Fistonov', 'fistin45hj@gmail.com', 38068887287,
+        ['shirt', 'skirt', 'cap', 'cup', 'milk']),
+    new Client(23, 'Ludmila', 'Giltova', 'ddbbggiillg@gmail.com', 380677770287,
+        ['shirt', 'skirt', 'cup', 'milk']),
+    new Client(22, 'Fedor', 'Navoyta', 'fednav4499aya@gmail.com', 380664772466,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk']),
+    new Client(21, 'Oksana', 'Kolesnyk', 'oksi474kol@gmail.com', 380639819998,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(20, 'Jan', 'Kolesnyk', 'jann67kol@gmail.com', 380638919998,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(19, 'Jan', 'Kolesnyk', 'jann67kol@gmail.com', 380638919998,
+        ['coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(1156, 'Vivien', 'Hilton', 'druyten89frtj76@gmail.com', 380636354737,
+        ['shirt', 'skirt', 'coat', 'cap']),
+    new Client(18, 'Valya', 'Rubbiny', 'hts56@gmail.com', 380684544737,
+        ['boll', 'skirt', 'coat', 'cap', 'cup']),
+    new Client(17, 'Zinaida', 'Pilotca', 'plotcina23hy@gmail.com', 380664541287,
+        ['shirt', 'skirt', 'coat']),
+    new Client(16, 'Zhanna', 'Navhotta', 'ftf5ffg@gmail.com', 380634772587,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk']),
+    new Client(15, 'Vasya', 'Fistonov', 'fistin45hj@gmail.com', 38068887287,
+        ['shirt', 'skirt', 'cap', 'cup', 'milk']),
+    new Client(14, 'Ludmila', 'Giltova', 'ddbbggiillg@gmail.com', 380677770287,
+        ['shirt', 'skirt', 'cup', 'milk']),
+    new Client(13, 'Fedor', 'Navoyta', 'fednav4499aya@gmail.com', 380664772466,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk']),
+    new Client(12, 'Oksana', 'Kolesnyk', 'oksi474kol@gmail.com', 380639819998,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(11, 'Jan', 'Kolesnyk', 'jann67kol@gmail.com', 380638919998,
+        ['shirt', 'skirt', 'coat', 'cap', 'cup', 'milk', 'salt', 'lemon']),
+    new Client(10, 'Jan', 'Kolesnyk', 'jann67kol@gmail.com', 380638919998,
+        ['coat', 'cap', 'cup', 'milk', 'salt', 'lemon'])
+];
+
+console.log(clients.length);
+
+let box = document.getElementById('box');
+let clientsBoxX = document.getElementById('clientsBoxX');
+let clientsBox = document.createElement('div')
+// box.append( clientsBoxX);
+clientsBoxX.append( clientsBox);
+
+
+let numberPage = JSON.parse(sessionStorage.getItem('numberPage')) || 1;
+let a;
+let b;
+
+let prev = document.getElementById('prev');
+if(numberPage === 1){prev.disabled = true}
+prev.addEventListener('click', function () {
+    if (numberPage > 1){
+        numberPage = numberPage - 1;
+        foo666(clients)
+    }
+    next.disabled = false
+    if(numberPage === 1){
+        prev.disabled = true;
+    }
+});
+
+let next = document.getElementById('next');
+next.addEventListener('click', function () {
+    if (numberPage < clients.length / 10){
+    numberPage = numberPage + 1;
+    foo666(clients)
+    }
+    prev.disabled = false
+    if(numberPage === 10){next.disabled = true}
+});
+
+let foo666  = function(arr){
+    sessionStorage.setItem('numberPage', JSON.stringify(numberPage));
+    b = numberPage*10;
+    a = b - 10;
+    let clienTs = [];
+    for (let i = a; i < b; i++) {
+        clienTs.push(arr[i]);
+        console.log(clienTs)
+    }
+    for (let j = 0; j < 10; j++) {
+        // const clienT = clienTs[j];
+        let clientFile = document.createElement('div');
+        clientFile.classList.add('clientFile');
+        clientFile.innerHTML = `<h4>id-${clienTs[j].id} name-${clienTs[j].name} ${clienTs[j].email}</h4>`;
+        clientsBox.appendChild(clientFile);
+        clientsBoxX = clientsBox
+    }
+    console.log(numberPage)
+}
+
 
 
 
@@ -96,13 +373,14 @@ button.onclick = function (){
 f2.addEventListener('submit', function (e) {
     e.preventDefault();
     let age = this.age.value;
+        console.log(age);
     if (age < 18) {
         alert('Вибачте, але Вам немає 18, вхід заборонено')
     } else {
         alert(`Age eligible entry permitted`)
     }
-});
-
+}
+);
 
 // 7. - *** Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість
 // ячеєк, третій вміст ячеєк.
@@ -110,30 +388,31 @@ f2.addEventListener('submit', function (e) {
 //     з відповідним вмістом.
 // (Додаткова частина для завдання)
 let but5 = document.getElementById('but5');
-but5.onclick = createTable;
-function createTable() {
-    form.onsubmit = function (ev) {
+// but5.onclick = createTable;
+f5.addEventListener('submit', function (ev)
+     {
         // console.log(ev);
         ev.preventDefault();
         let element = this.element.value;
         let columns = this.columns.value;
-        let rows = this.rows.value
-        let tablet = document.createElement('table');
+        let rows = this.rows.value;
+        let tablet = document.createElement('tablet');
+        tablet. classList.add('tablet');
+                for (let i = 0; i < rows; i++) {
+                    let tr = document.createElement('div');
+                    tr.classList.add('tr');
+                    tablet.appendChild(tr);
+                    for (let j = 0; j < columns; j++) {
+                        let td = document.createElement('div');
+                        td.classList.add('td')
+                        tr.appendChild(td);
+                        td.innerText = `${element}`
+                    }
 
-        for (let i = 0; i < rows; i++) {
-            let tr = document.createElement('tr');
-            tr.classList.add('tr');
-            for (let j = 0; j < columns; j++) {
-                let td = document.createElement('td');
-                td.classList.add('td')
-                tr.appendChild(td);
-                td.innerText = `${element}`
-            }
-            tablet.appendChild(tr);
-        }
-        document.body.appendChild(tablet);
+                }
+                document.body.appendChild(tablet);
     }
-}
+);
 
 
 // 8. - *** (подібне було вище, але...будьте уважні в другій частині) створити сторінку з

@@ -4,8 +4,10 @@
     this.name = name;
     this.surname =surname;
     this.email = email;
-    this.phone = phone
+    this.phone = phone;
  }
+
+
 // створити пустий масив, наповнити його 10 об'єктами new User(....)
  let users = [
      new User(10, 'Alla', 'Zavorotnuk', 'zhizel71@ukr.net', 380966774511),
@@ -20,9 +22,9 @@
      new User(1, 'Dmitrii', 'Kolesnyk', 'kolesnyk72dima@ukr.net', 380966774511)
 ];
  console.log(users);
-// - Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
+// - Взяти масив з User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
 console.log(users.filter(value => value.id%2 === 0));
-// - Взяти масив з  User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort)
+// - Взяти масив з User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort)
 console.log(users.sort((u1, u2) =>{return u1.id-u2.id}));
 // - створити класс для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
 class Client {

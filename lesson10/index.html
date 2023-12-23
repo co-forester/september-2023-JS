@@ -7,14 +7,19 @@
 </head>
 <body>
 <form name="f1">
-    <input type="text" placeholder="user name" name="userName">
+    <input type="text" placeholder="user name" name="userName" >
     <input type="text" placeholder="user surname" name="userSurname">
     <input type="number" placeholder="user age" name="userAge">
-    <input type="submit" value="save">
+    <input id="f1But"  type="submit" value="save">
 </form>
 <!--<button id="btn-show-all">show all users</button>-->
 <div id="butCount"></div>
 <div id="text"></div>
+<div id="box">
+    <button id="prev">PREV</button>
+    <button id="next">NEXT</button>
+    <div id="clientsBoxX"></div>
+</div>
 <form action="" id="f2">
     <input class="inn" type="number"
            name="age"
@@ -22,20 +27,20 @@
     <button id="but2">send</button>
 </form>
 <form name="foo" id="f5">
-    <input className="iin" type="number"
+    <input  type="number"
            name="rows"
            placeholder="rows"><br>
-    <input className="iin" type="number"
+    <input  type="number"
            name="columns"
            placeholder="columns"><br>
-    <input className="iin" type="text"
+    <input  type="text"
            name="element"
            placeholder="element">
-    <button id="but5">send</button>
+    <button id="but5" >send</button>
 </form>
-<div id="tablet"></div>
+<!--<div id="tablet"></div>-->
 <div id="butCountMoney"></div>
-<!--<div id = butWallet></div>-->
+
 <script src="scripts/main.js"></script>
 </body>
 </html>

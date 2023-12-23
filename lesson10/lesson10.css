@@ -1,3 +1,12 @@
+body{
+    background: darkseagreen;
+    display: flex;
+    flex-direction: column;
+}
+#box{
+    display: flex;
+    flex-direction: column;
+}
 .count, .butCountMoney{
     display: flex;
     justify-content: center;
@@ -8,6 +17,8 @@
     margin: 3px 15px 5px 15px;
 }
 #butCount{
+    width: 30vw;
+    background: gainsboro;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,33 +53,64 @@
     border-radius: 4px;
 }
 #butCount, #butCountMoney{
+    width: 150px;
     margin-top: 30px;
+    background: #c8ddea;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+.count, .countText{
+
 }
 #f2, #f5{
     margin: 15px 0 0 15px;
 }
 .td {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: beige;
     width: 150px;
     padding: 20px;
-    border: 1px solid #fffcfc;
+    border: 1px solid #f10a02;
 }
-#table{
+.tr{
     display: flex;
-    flex-direction: row;
-    background: lightblue;
-    width: 300px;
-    height: 100px;margin: 15px 0 0 15px;
+    flex-direction: column;
+    border: solid 1px #34bae8;
 }
-#iin{
+/*#tablet{*/
+/*    display: flex;*/
+/*    background: lightblue;*/
+/*    !*width: 300px;*!*/
+/*    !*height: 100px;margin: 15px 0 0 15px;*!*/
+/*    border: solid 1px #ec7373;*/
+/*}*/
+.tablet{
+    /*width: 80%;*/
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    /*background: lightblue;*/
+    /*border: solid 1px #adec73;*/
 }
+/*#iin{*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*}*/
 .in {
     margin: 2px 0 0 15px;
 }
 .titra{
     background: #e5cdaf;
+}
+#box{
+    width: 250px;
+    display: flex;
+    justify-content: space-around;
+    background: #568339;
+}
+.clientFile{
+    border: solid 1px #99b6c7;
+    padding-left: 20px;
 }
