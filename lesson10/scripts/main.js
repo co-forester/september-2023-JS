@@ -345,6 +345,9 @@ let foo666  = function(arr){
     }
     console.log(numberPage)
 }
+prev.onclick = function (){
+    alert(`!!!!!`)
+}
 
 
 
@@ -416,6 +419,7 @@ f5.addEventListener('submit', function (ev){
     }
     document.body.appendChild(tablet);
     but5.disabled = !but5.disabled
+        form5.reset();
 }
 );
 
