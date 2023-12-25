@@ -327,6 +327,7 @@ next.addEventListener('click', function () {
 });
 
 let foo666  = function(arr){
+    clientsBox.innerHTML = '';
     sessionStorage.setItem('numberPage', JSON.stringify(numberPage));
     b = numberPage*10;
     a = b - 10;
@@ -395,10 +396,10 @@ f2.addEventListener('submit', function (e) {
 // (Додаткова частина для завдання)
 let form5 = document.forms[2];
 let but5 = document.getElementById('but5');
-but5.disabled = 'true';
-form5.element.onclick = function (ev) {
-    ev.preventDefault();
-    but5.disabled = !but5.disabled
+// but5.disabled = 'true';
+form5.rows.onchange = function () {
+    // ev.preventDefault();
+    // but5.disabled = !but5.disabled
 }
 f5.addEventListener('submit', function (ev){
     ev.preventDefault();
@@ -421,7 +422,7 @@ f5.addEventListener('submit', function (ev){
 
     }
     document.body.appendChild(tablet);
-    but5.disabled = !but5.disabled
+    // but5.disabled = !but5.disabled
         form5.reset();
 }
 );
