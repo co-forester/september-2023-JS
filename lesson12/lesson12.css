@@ -1,9 +1,15 @@
 .User{
+    width: 250px;
     display: flex;
     flex-direction: column;
+    margin: 6px;
+    padding: 12px;
+    background: #eee9cd;
 }
-.Id{
-
+.Id, .Name, .UserName, .Address,
+.Geo, .Lat, .Ing, .Zipcode, .City,
+.Street, .Suite, .Company, .NameCompany, .CatchPhrase, .Bs, .Email, .Phone, .Website{
+    padding: 3px;
 }
 .Name{
 
@@ -12,7 +18,7 @@
 
 }
 .Address{
-
+    background: #e7db8d;
 }
 .Company{
 
@@ -25,4 +31,17 @@
 }
 .Website{
 
+}
+.Geo{
+    margin:  0 20px 0 20px;
+    padding-bottom: 11px;
+    display: flex;
+    flex-direction: column;
+    background: #eee9cd;
+}
+.Lat, .Ing{
+    margin: 0 10px 0 10px;
+    margin-bottom: 2px;
+    display: flex;
+    background: #e7db8d;
 }

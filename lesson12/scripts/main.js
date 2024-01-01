@@ -75,13 +75,16 @@ const Users =async ()=> {
                 let divName = document.createElement('div');
                 let divUserName = document.createElement('div');
                 let divCompany = document.createElement('div');
+                let divCatchPhrase = document.createElement('div');
+                let divNameCompany = document.createElement('div');
+                let divBs = document.createElement('div');
                 let divEmail = document.createElement('div');
                 let divPhone = document.createElement('div');
                 let divWebsite = document.createElement('div');
                 let divAddress = document.createElement('div');
                 let divGeo = document.createElement('div');
                 let divLat = document.createElement('div');
-                let divInd = document.createElement('div');
+                let divLng = document.createElement('div');
                 let divZipcode = document.createElement('div');
                 let divCity = document.createElement('div');
                 let divStreet = document.createElement('div');
@@ -96,8 +99,18 @@ const Users =async ()=> {
                 divWebsite.classList.add('Website');
                 divAddress.classList.add('Address');
                 divStreet.classList.add('Street');
+                divGeo.classList.add('Geo');
+                divLat.classList.add('Lat');
+                divLng.classList.add('Ing');
                 divAddress.innerText = `address:`;
                 divCompany.innerText = `company:`;
+                divCatchPhrase.innerText = `catchPhrase:`;
+                divBs.innerText = `bs:`;
+                divNameCompany.innerText = `name:`;
+                divGeo.innerText = `Geo:`;
+                divZipcode.innerText = `zipcode: ${user.address.zipcode}`
+                divLng.innerText = `Ing: ${user.address.geo.lng}`;
+                divLat.innerText = `Lat: ${user.address.geo.lat}`;
                 divCity.innerText = `city: ${user.address.city}`;
                 divStreet.innerText = `street: ${user.address.street}`;
                 divSuite.innerText = `suite: ${user.address.suite}`;
@@ -107,9 +120,14 @@ const Users =async ()=> {
                 divEmail.innerText = `email: ${user.email}`;
                 divPhone.innerText = `phone: ${user.phone}`;
                 divWebsite.innerText = `website: ${user.website}`;
+                divNameCompany.innerText = `name: ${user.company.name}`;
+                divCatchPhrase.innerText = `catchPhrase: ${user.company.catchPhrase}`;
+                divBs.innerText = `bs: ${user.company.bs}`;
                 document.body.appendChild(divUser);
-                divUser.append(divId, divName, divUserName, divAddress, divCompany, divEmail, divPhone, divWebsite)
-                divAddress.append(divCity, divStreet)
+                divUser.append(divId, divName, divUserName, divAddress, divCompany, divEmail, divPhone, divWebsite);
+                divAddress.append(divGeo, divZipcode, divCity, divStreet, divSuite);
+                divGeo.append(divLat, divLng);
+                divCompany.append(divNameCompany, divCatchPhrase, divBs)
             }
         })
 }
