@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            font-family: 'Rubik+Doodle', serif;
+            background: darkseagreen;
+            padding-top: 90px;
+            margin: 0;
+        }
+        .a{
+            text-decoration: none;
+            font-size: 33px;
+            color: #1e7745;
+
+        }
+        .List{
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+        }
+        .Li{
+            padding: 3px 20px 3px 20px;
+            background: #eee9cd;
+            margin-bottom: 3px;
+            transition: 0.2s;
+            opacity: 0.6
+        }
+        .Li:hover{
+            opacity: 1
+        }
+        .aName{
+            color: #1e7745;
+        }.aName:hover{
+            color: #8c8507;
+        }
+    </style>
+</head>
+<body>
+<h2>CARD INDEX</h2>
+<ul id ='list'></ul>
+
+<script>
+    fetch('https://jsonplaceholder.typicode.com/users')
+        .then(res => res.json())
+        .then((users) => {console.log(users);
+            for (const user of users) {
+                let ul = document.getElementById('list');
+                let li = document.createElement('li');
+                let a = document.createElement('a');
+                let aId = document.createElement('aId');
+                let aName = document.createElement('aName');
+                ul.classList.add('List');
+                li.classList.add('Li');
+                a.classList.add('a');
+                aId.classList.add('aId');
+                aName.classList.add('aName');
+                aId.innerHTML = `${user.id} - `;
+                aName.innerHTML = `<b>${user.name}</b>`;
+                a.href = `./user-details.html?id=${user.id}`;
+                a.append(aId, aName);
+                li.appendChild(a);
+                ul.appendChild(li);
+            }})
+</script>
+</body>
+</html>

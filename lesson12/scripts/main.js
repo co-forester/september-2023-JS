@@ -67,8 +67,8 @@ const Users =async ()=> {
         .then(response => {
             return response.json()
         })
-            // .then(value => console.log (value))
         .then(users => {
+            console.log (users);
             for (const user of users) {
                 let divUser = document.createElement('div');
                 let divId = document.createElement('div');
@@ -142,7 +142,8 @@ const Users =async ()=> {
         })
 }
 Users();
-fetch('https://jsonplaceholder.typicode.com/users')
+fetch('https://jsonplaceholder.typicode.com/posts')
     .then(response => {
         return response.json()
-    }).then(value => console.log (value))
+    }).then(value => console.log (value));
+

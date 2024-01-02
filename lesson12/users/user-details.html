@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user-details</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+        body{
+            display: flex;
+            font-size: 24px;
+            flex-direction: column;
+            align-items: center;
+            background: darkseagreen;
+            margin: 0;
+        }
+        .AA, h4{
+            text-decoration: none;
+            font-family: 'Rubik+Doodle', serif;
+        }
+        .AA{
+            margin-top: 90px;
+            color: #1e7745;
+        }
+        .AA:hover{
+                color: #000000;
+        }
+        .User{
+            /*width: 240px;*/
+            display: flex;
+            flex-direction: column;
+            margin: 6px;
+            padding: 12px;
+            background: #eee9cd;
+        }
+        .Id, .Name, .UserName, .Address,
+        .Geo, .Lat, .Ing, .Zipcode, .City,
+        .Street, .Suite, .Company, .NameCompany, .CatchPhrase, .Bs, .Email, .Phone, .Website{
+            padding: 3px;
+        }
+        .Id{
+            background: #e7db8d;
+        }
+        .Name{
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+        .NameValue{
+            color: #8c8507;
+            font-size: 33px;
+            margin-left: 5px;
+        }
+        .UserName{
+
+        }
+        .Address{
+            background: #eae1b4;
+        }
+        .Zipcode, .City, .Street, .Suite, .Bs, .CatchPhrase, .NameCompany{
+            display: flex;
+        }
+        .ZipcodeProp, .CityProp, .StreetProp, .SuiteProp, .BsProp, .NameCompanyProp, .CatchPhraseProp, .BsProp{
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            margin-right: 16px;
+        }.ZipcodeValue, .CityValue, .StreetValue, .SuiteValue{
+            display: flex;
+            align-items: center;
+        }
+        .Company{
+
+        }
+        .CatchPhrase{
+
+        }
+        .CatchPhraseValue{
+            /*font-size: 11px;*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .Email{
+
+        }
+        .Phone{
+
+        }
+        .Website{
+
+        }
+        .Geo{
+            width: 50%;
+            margin:  0 20px 0 20px;
+            padding-bottom: 11px;
+            display: flex;
+            flex-direction: column;
+            /*align-items: center;*/
+            background: #eee9cd;
+        }
+        .Lat, .Ing{
+            font-size: 19px;
+            margin: 0 10px 0 10px;
+            margin-bottom: 2px;
+            display: flex;
+            background: #eae1b4;
+        }
+        /*button{*/
+        /*    width: 50%;*/
+        /*    margin-left: 25%;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<h4>USER-DETAILS</h4>
+<script>
+    let a = document.createElement('a');
+    a.classList.add('AA');
+    a.innerText = `card index  (return)`;
+    a.href = "./users.html";
+    let url = new URL(location.href);
+    let idValue = url.searchParams.get('id');
+     url1 = 'https://jsonplaceholder.typicode.com/users/'+ idValue;
+    fetch(url1)
+        .then(response => response.json())
+        .then(user => {
+            console.log(user);
+            let divUser = document.createElement('div');
+            let divId = document.createElement('div');
+            let divName = document.createElement('div');
+            let divNameProp = document.createElement('div');
+            let divNameValue = document.createElement('div');
+            let divUserName = document.createElement('div');
+            let divEmail = document.createElement('div');
+            let divPhone = document.createElement('div');
+            let divWebsite = document.createElement('div');
+            let divAddress = document.createElement('div');
+            let divGeo = document.createElement('div');
+            let divLat = document.createElement('div');
+            let divLng = document.createElement('div');
+            let divZipcode = document.createElement('div');
+            let divZipcodeProp = document.createElement('div');
+            let divZipcodeValue = document.createElement('div');
+            let divCity = document.createElement('div');
+            let divCityProp = document.createElement('div');
+            let divCityValue = document.createElement('div');
+            let divStreet = document.createElement('div');
+            let divStreetProp = document.createElement('div');
+            let divStreetValue = document.createElement('div');
+            let divSuite = document.createElement('div');
+            let divSuiteProp = document.createElement('div');
+            let divSuiteValue = document.createElement('div');
+            let divCompany = document.createElement('div');
+            let divNameCompany = document.createElement('div');
+            let divNameCompanyProp = document.createElement('div');
+            let divNameCompanyValue = document.createElement('div');
+            let divCatchPhrase = document.createElement('div');
+            let divCatchPhraseProp = document.createElement('div');
+            let divCatchPhraseValue = document.createElement('div');
+            let divBs = document.createElement('div');
+            let divBsProp = document.createElement('div');
+            let divBsValue = document.createElement('div');
+            // let buttonPosts = document.createElement('button');
+            divUser.classList.add('User');
+            divId.classList.add('Id');
+            divName.classList.add('Name');
+            divNameValue.classList.add('NameValue');
+            divPhone.classList.add('Phone');
+            divEmail.classList.add('Email');
+            divUserName.classList.add('UserName');
+            divZipcode.classList.add('Zipcode');
+            divZipcodeProp.classList.add('ZipcodeProp');
+            divZipcodeValue.classList.add('ZipcodeValue');
+            divWebsite.classList.add('Website');
+            divAddress.classList.add('Address');
+            divCity.classList.add('City');
+            divCityProp.classList.add('CityProp');
+            divCityValue.classList.add('CityValue');
+            divStreet.classList.add('Street');
+            divStreetProp.classList.add('StreetProp');
+            divStreetValue.classList.add('StreetValue');
+            divSuite.classList.add('Suite');
+            divSuiteProp.classList.add('SuiteProp');
+            divSuiteValue.classList.add('SuiteValue');
+            divGeo.classList.add('Geo');
+            divLat.classList.add('Lat');
+            divLng.classList.add('Ing');
+            divCompany.classList.add('Company');
+            divNameCompany.classList.add('NameCompany');
+            divNameCompanyProp.classList.add('NameCompanyProp');
+            divNameCompanyValue.classList.add('NameCompanyValue');
+            divCatchPhrase.classList.add('CatchPhrase');
+            divCatchPhraseProp.classList.add('CatchPhraseProp');
+            divCatchPhraseValue.classList.add('CatchPhraseValue');
+            divBs.classList.add('Bs');
+            divBsProp.classList.add('BsProp');
+            divBsValue.classList.add('BsValue');
+            divAddress.innerText = `address:`;
+            divGeo.innerText = `Geo:`;
+            divZipcodeProp.innerText = `zipcode:`
+            divZipcodeValue.innerHTML = `<b>${user.address.zipcode}</b>`
+            divLng.innerHTML = `Ing:  ${user.address.geo.lng}`;
+            divLat.innerHTML = `Lat: ${user.address.geo.lat}`;
+            divCityProp.innerText = `city:`;
+            divCityValue.innerHTML = `<b>${user.address.city}</b>`;
+            divStreetProp.innerText = `street:`;
+            divStreetValue.innerHTML = `<b>${user.address.street}</b>`;
+            divSuiteProp.innerText = `suite:`;
+            divSuiteValue.innerHTML = `<b>${user.address.suite}</b>`;
+            divId.innerHTML = `id: <b>${user.id}</b>`;
+            divNameProp.innerText = `name:`;
+            divNameValue.innerHTML = `<b>${user.name}</b>`;
+            divUserName.innerHTML = `username: <b>${user.username}</b>`;
+            divEmail.innerHTML = `email: <b>${user.email}</b>`;
+            divPhone.innerHTML = `phone: <b>${user.phone}</b>`;
+            divWebsite.innerHTML = `website: <b>${user.website}</b>`;
+            divCompany.innerText = `company:`;
+            divNameCompanyProp.innerText = `name:`;
+            divNameCompanyValue.innerHTML = `<b>${user.company.name}</b>`;
+            divCatchPhraseProp.innerText = `catchPhrase:`;
+            divCatchPhraseValue.innerHTML = `<b>${user.company.catchPhrase}</b>`;
+            divBsProp.innerHTML = `bs:`;
+            divBsValue.innerHTML = `<b>${user.company.bs}</b>`;
+            // buttonPosts.innerHTML = `posts`;
+            document.body.append(divUser, a);
+            divZipcode.append(divZipcodeProp, divZipcodeValue);
+            divCity.append(divCityProp, divCityValue);
+            divStreet.append(divStreetProp, divStreetValue);
+            divSuite.append(divSuiteProp, divSuiteValue);
+            divName.append(divNameProp, divNameValue);
+            divCatchPhrase.append(divCatchPhraseProp, divCatchPhraseValue);
+            divAddress.append(divGeo, divZipcode, divCity, divStreet, divSuite);
+            divGeo.append(divLat, divLng);
+            divCompany.append(divNameCompany, divCatchPhrase, divBs);
+            divNameCompany.append(divNameCompanyProp, divNameCompanyValue);
+            divBs.append(divBsProp, divBsValue);
+            divUser.append(divId, divName, divUserName, divEmail, divPhone, divWebsite, divAddress, divCompany
+                // , buttonPosts
+            )
+
+        });
+
+</script>
+</body>
+</html>
