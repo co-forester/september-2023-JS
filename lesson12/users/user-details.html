@@ -50,8 +50,8 @@
             font-size: 33px;
             margin-left: 5px;
         }
-        .UserName{
-
+        .NameValue{
+            font-style: italic;
         }
         .Address{
             background: #eae1b4;
@@ -195,6 +195,13 @@
             divBs.classList.add('Bs');
             divBsProp.classList.add('BsProp');
             divBsValue.classList.add('BsValue');
+            divId.innerHTML = `id: <b>${user.id}</b>`;
+            divNameProp.innerText = `name:`;
+            divNameValue.innerHTML = `<b>${user.name}</b>`;
+            divUserName.innerHTML = `username: <b>${user.username}</b>`;
+            divEmail.innerHTML = `email: <b>${user.email}</b>`;
+            divPhone.innerHTML = `phone: <b>${user.phone}</b>`;
+            divWebsite.innerHTML = `website: <b>${user.website}</b>`;
             divAddress.innerText = `address:`;
             divGeo.innerText = `Geo:`;
             divZipcodeProp.innerText = `zipcode:`
@@ -207,13 +214,6 @@
             divStreetValue.innerHTML = `<b>${user.address.street}</b>`;
             divSuiteProp.innerText = `suite:`;
             divSuiteValue.innerHTML = `<b>${user.address.suite}</b>`;
-            divId.innerHTML = `id: <b>${user.id}</b>`;
-            divNameProp.innerText = `name:`;
-            divNameValue.innerHTML = `<b>${user.name}</b>`;
-            divUserName.innerHTML = `username: <b>${user.username}</b>`;
-            divEmail.innerHTML = `email: <b>${user.email}</b>`;
-            divPhone.innerHTML = `phone: <b>${user.phone}</b>`;
-            divWebsite.innerHTML = `website: <b>${user.website}</b>`;
             divCompany.innerText = `company:`;
             divNameCompanyProp.innerText = `name:`;
             divNameCompanyValue.innerHTML = `<b>${user.company.name}</b>`;
