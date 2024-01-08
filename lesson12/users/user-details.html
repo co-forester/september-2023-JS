@@ -5,7 +5,8 @@
     <title>user-details</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
-        body{
+
+        body {
             display: flex;
             font-size: 24px;
             flex-direction: column;
@@ -13,18 +14,22 @@
             background: darkseagreen;
             margin: 0;
         }
-        .AA, h4{
+
+        .AA, h4 {
             text-decoration: none;
             font-family: 'Rubik+Doodle', serif;
         }
-        .AA{
+
+        .AA {
             margin-top: 90px;
             color: #1e7745;
         }
-        .AA:hover{
-                color: #000000;
+
+        .AA:hover {
+            color: #000000;
         }
-        .User{
+
+        .User {
             /*width: 240px;*/
             display: flex;
             flex-direction: column;
@@ -32,79 +37,98 @@
             padding: 12px;
             background: #eee9cd;
         }
+
         .Id, .Name, .UserName, .Address,
         .Geo, .Lat, .Ing, .Zipcode, .City,
-        .Street, .Suite, .Company, .NameCompany, .CatchPhrase, .Bs, .Email, .Phone, .Website{
+        .Street, .Suite, .Company, .NameCompany, .CatchPhrase, .Bs, .Email, .Phone, .Website {
             padding: 3px;
         }
-        .Id{
+
+        .Id {
             background: #e7db8d;
         }
-        .Name{
+
+        .Name {
             display: flex;
             justify-content: start;
             align-items: center;
         }
-        .NameValue{
+
+        .NameValue {
             color: #8c8507;
             font-size: 33px;
             margin-left: 5px;
         }
-        .NameValue{
+
+        .NameValue {
             font-style: italic;
         }
-        .Address{
+
+        .Address {
             background: #eae1b4;
         }
-        .Zipcode, .City, .Street, .Suite, .Bs, .CatchPhrase, .NameCompany{
+
+        .Zipcode, .City, .Street, .Suite, .Bs, .CatchPhrase, .NameCompany {
             display: flex;
         }
-        .ZipcodeProp, .CityProp, .StreetProp, .SuiteProp, .BsProp, .NameCompanyProp, .CatchPhraseProp, .BsProp{
+
+        .ZipcodeProp, .CityProp, .StreetProp, .SuiteProp, .BsProp, .NameCompanyProp, .CatchPhraseProp, .BsProp {
             display: flex;
             align-items: center;
             font-size: 15px;
             margin-right: 16px;
-        }.ZipcodeValue, .CityValue, .StreetValue, .SuiteValue{
+        }
+
+        .ZipcodeValue, .CityValue, .StreetValue, .SuiteValue {
             display: flex;
             align-items: center;
         }
-        .Company{
+
+        .Company {
 
         }
-        .CatchPhrase{
+
+        .CatchPhrase {
 
         }
-        .CatchPhraseValue{
+
+        .CatchPhraseValue {
             /*font-size: 11px;*/
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        .Email{
+
+        .Email {
 
         }
-        .Phone{
+
+        .Phone {
 
         }
-        .Website{
+
+        .Website {
 
         }
-        .Geo{
+
+        .Geo {
             width: 50%;
-            margin:  0 20px 0 20px;
+            margin: 0 20px 0 20px;
             padding-bottom: 11px;
             display: flex;
             flex-direction: column;
             /*align-items: center;*/
             background: #eee9cd;
         }
-        .Lat, .Ing{
+
+        .Lat, .Ing {
             font-size: 19px;
             margin: 0 10px 0 10px;
             margin-bottom: 2px;
             display: flex;
             background: #eae1b4;
         }
+
         /*button{*/
         /*    width: 50%;*/
         /*    margin-left: 25%;*/
@@ -120,7 +144,7 @@
     a.href = "./users.html";
     let url = new URL(location.href);
     let idValue = url.searchParams.get('id');
-     url1 = 'https://jsonplaceholder.typicode.com/users/'+ idValue;
+    url1 = 'https://jsonplaceholder.typicode.com/users/' + idValue;
     fetch(url1)
         .then(response => response.json())
         .then(user => {
